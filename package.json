@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/roxas332519096/vue-ui/issues"
   },
-  "homepage": "https://github.com/roxas332519096/vue-ui#readme"
+  "homepage": "https://github.com/roxas332519096/vue-ui#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
