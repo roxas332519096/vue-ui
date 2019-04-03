@@ -1,8 +1,6 @@
 <template>
     <button class="g-button" :class="{right:iconRight}">
-        <svg v-if="icon" class="icon">
-            <use :xlink:href="`#i-${icon}`"></use>
-        </svg>
+        <g-icon :name="icon" v-if="icon" ></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -12,7 +10,15 @@
 <script>
     export default {
         name: 'gButton',
-        props:['icon','iconRight'],
+        props: {
+            icon: {
+                type:String,
+            },
+            iconRight: {
+                type: Boolean,
+                default: false,
+            }
+        },
     }
 </script>
 
@@ -52,9 +58,10 @@
         }
 
         &.right {
-            > .content{
+            > .content {
                 order: 1;
             }
+
             > .icon {
                 order: 2;
                 margin-right: 0;
