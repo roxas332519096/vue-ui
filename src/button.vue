@@ -1,6 +1,7 @@
 <template>
-    <button class="g-button" :class="{right:iconRight}">
-        <g-icon :name="icon" v-if="icon" ></g-icon>
+    <button class="g-button" :class="{right:iconRight}" @click="_click">
+        <g-icon :name="icon" v-if="icon && !loading" ></g-icon>
+        <g-icon name="loading" class="loading" v-if="loading"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -17,12 +18,25 @@
             iconRight: {
                 type: Boolean,
                 default: false,
+            },
+            loading:{
+                type:Boolean,
+                default: false,
             }
         },
+        methods:{
+            _click(){
+                this.$emit('click')
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
+    @keyframes spin {
+        0% { transform: rotate(0) }
+        100% { transform: rotate(360deg) }
+    }
     .g-button {
         display: inline-flex;
         justify-content: center;
@@ -67,6 +81,10 @@
                 margin-right: 0;
                 margin-left: .3em;
             }
+        }
+
+        .loading{
+            animation: spin 2s infinite linear;
         }
     }
 </style>
