@@ -22,6 +22,7 @@ import spies from 'chai-spies'
 chai.use(spies)
 const { expect } = chai
 {
+    //测试含有icon
     const Constructor = Vue.extend(gButton);
     const vm = new Constructor({
         propsData: {
@@ -34,6 +35,7 @@ const { expect } = chai
 }
 
 {
+    //测试loading
     const div = document.createElement('div')
     document.body.appendChild(div)
     const Constructor = Vue.extend(gButton);
@@ -51,6 +53,7 @@ const { expect } = chai
 }
 
 {
+    //测试icon默认方向
     const div = document.createElement('div')
     document.body.appendChild(div)
     const Constructor = Vue.extend(gButton);
@@ -69,6 +72,7 @@ const { expect } = chai
 }
 
 {
+    //测试icon-right
     const div = document.createElement('div')
     document.body.appendChild(div)
     const Constructor = Vue.extend(gButton);
@@ -88,6 +92,7 @@ const { expect } = chai
 }
 
 {
+    //测试button组件点击事件
     const Constructor = Vue.extend(gButton);
     const vm = new Constructor({
         propsData: {
@@ -101,3 +106,4 @@ const { expect } = chai
     button.click();
     expect(spy).to.have.been.called()
 }
+
