@@ -6,6 +6,8 @@ Vue.config.productionTip = false
 Vue.config.devtools = false
 
 describe('Button',()=>{
+    // BDD 行为驱动测试
+
     it('存在',()=>{
         expect(gButton).to.be.ok
     })
@@ -18,6 +20,8 @@ describe('Button',()=>{
         }).$mount()
         let useElement = vm.$el.querySelector('use')
         expect(useElement.getAttribute('xlink:href')).to.eq('#i-setting')
+        vm.$el.remove()
+        vm.$destroy()
     })
     it('可以设置loading',()=>{
         const div = document.createElement('div')
@@ -75,10 +79,10 @@ describe('Button',()=>{
                 icon: 'setting',
             }
         }).$mount();
-        const  callback = sinon.fake();
+        const callback = sinon.fake();
         vm.$on('click', callback)
         vm.$el.click();
-        expect(callback).to.have.been.called()
+        expect(callback).to.have.been.called
     })
 })
 
