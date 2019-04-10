@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/roxas332519096/vue-ui#readme",
   "dependencies": {
+    "parcel-bundler": "^1.12.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },
