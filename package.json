@@ -1,6 +1,6 @@
 {
   "name": "roxas-ui-test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "一个基于vue的ui框架",
   "main": "dist/index.js",
   "scripts": {
