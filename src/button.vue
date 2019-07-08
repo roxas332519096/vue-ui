@@ -9,8 +9,12 @@
 </template>
 
 <script>
+    import gIcon from './icon.vue'
     export default {
         name: 'gButton',
+        components:{
+            gIcon
+        },
         props: {
             icon: {
                 type:String,
