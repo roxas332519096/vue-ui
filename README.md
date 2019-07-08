@@ -26,13 +26,7 @@ export default {
 }
 ```
 
-3. 引入 svg symbols
-
-```
-<script src="//at.alicdn.com/t/font_1123605_3y5toutamb5.js"></script>
-```
-
-4. 添加css样式
+5. 添加css样式
 
     使用本框架前,请css设计border-box
     
@@ -42,7 +36,7 @@ export default {
     *::after{box-sizing:border-box}
     ```
     
-    IE8 及以上浏览器都支持该样式.
+    IE11 及以上浏览器都支持该样式.
 
 ## 文档
 

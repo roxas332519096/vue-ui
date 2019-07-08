@@ -8,16 +8,6 @@
     <title>UI</title>
     <link rel="stylesheet" href="./src/css/main.scss">
     <style>
-        :root {
-            --button-height: 32px;
-            --font-size: 14px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
-            --border-radius: 4px;
-            --button-bg: #fff;
-            --button-active-bg: #eee;
-        }
         #app{
             margin:20px;
         }
@@ -30,9 +20,9 @@
         <g-button loading>2</g-button>
         <g-button loading icon-right>3</g-button>
     </g-button-group>
+        <g-input value="11" error="23131" @change="inputChange"></g-input>
     <div id="test"></div>
 </div>
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1123605_3y5toutamb5.js"></script>
 </body>
 </html>
