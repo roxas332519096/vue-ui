@@ -1,19 +1,6 @@
-<<<<<<< HEAD
-# 一个基于Vue的UI框架
-
-[![Build Status](https://www.travis-ci.org/roxas332519096/vue-ui.svg?branch=master)](https://www.travis-ci.org/roxas332519096/vue-ui)
-
-## 安装
-
-## 介绍
-
-## 文档
-
-## 安装
-=======
 ## 一个基于Vue的UI框架 
 
-[![Build Status](https://travis-ci.org/roxas332519096/vue-ui.svg?branch=master)](https://travis-ci.org/roxas332519096/vue-ui)
+[![Build Status](https://www.travis-ci.org/roxas332519096/vue-ui.svg?branch=master)](https://www.travis-ci.org/roxas332519096/vue-ui)
 
 ## 介绍
 
@@ -58,7 +45,6 @@ export default {
     IE8 及以上浏览器都支持该样式.
 
 ## 文档
->>>>>>> 27126668010236f83e5ac2e6e4118914ab4325ce
 
 ## 提问
 
@@ -68,10 +54,7 @@ export default {
 
 ## 贡献代码
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 27126668010236f83e5ac2e6e4118914ab4325ce
 
