@@ -21,7 +21,7 @@
 <style lang="scss" scoped>
     .g-button-group{
         display: inline-flex;
-        vert-align: middle;
+        vertical-align: middle;
         .g-button{
             border-radius: 0;
             &:not(:first-child) {
