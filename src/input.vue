@@ -1,6 +1,15 @@
 <template>
   <div class="wrapper" :class="{error}">
-    <input type="text" :value="value" :disabled="disabled" :readonly="readonly" @change="$emit('change',$event)">
+    <input
+      type="text"
+      :value="value"
+      :disabled="disabled"
+      :readonly="readonly"
+      @change="$emit('change',$event)"
+      @input="$emit('input',$event)"
+      @focus="$emit('focus',$event)"
+      @blur="$emit('blur',$event)"
+    />
     <template v-if="error">
       <g-icon name="info" class="errorIcon"></g-icon>
       <span class="errorMessage">{{error}}</span>
@@ -47,8 +56,8 @@ $error-color: #f1453d;
   display: inline-flex;
   align-items: center;
   font-size: $font-size;
-  > :not(:last-child){
-      margin-right: .5em;
+  > :not(:last-child) {
+    margin-right: 0.5em;
   }
   > input {
     padding: $padding;
