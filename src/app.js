@@ -10,7 +10,8 @@ new Vue({
     el: '#app',
     data() {
         return {
-            isLoading: true
+            isLoading: true,
+            message:''
         }
     },
     methods:{
