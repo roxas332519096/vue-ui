@@ -1,29 +1,40 @@
 <!doctype html>
 <html lang="zh-Hans">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UI</title>
     <link rel="stylesheet" href="./src/css/main.scss">
     <style>
-        #app{
-            margin:20px;
+        .col{
+            height: 100px;
         }
     </style>
 </head>
+
 <body>
-<div id="app">
-    <!-- <g-button-group>
+    <div id="app">
+        <!-- <g-button-group>
         <g-button icon="setting">1</g-button>
         <g-button loading>2</g-button>
         <g-button loading icon-right>3</g-button>
     </g-button-group> -->
-        <g-input v-model="message"></g-input>
-        <p>{{message}}</p>
-    <div id="test"></div>
-</div>
-<script src="./src/app.js"></script>
+        <!-- <g-input v-model="message"></g-input>
+        <p>{{message}}</p> -->
+        <g-row>
+            <g-col :xs="{span:12}">
+                <span>1</span>
+            </g-col>
+            <g-col :xs="{span:12}">
+                <span>1</span>
+            </g-col>
+        </g-row>
+        <div id="test"></div>
+    </div>
+    <script src="./src/app.js"></script>
 </body>
+
 </html>
