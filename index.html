@@ -9,29 +9,23 @@
     <title>UI</title>
     <link rel="stylesheet" href="./src/css/main.scss">
     <style>
-        .col{
-            height: 100px;
+        .demo{
+            border: 1px solid red;
+            min-height: 100px;
         }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <!-- <g-button-group>
-        <g-button icon="setting">1</g-button>
-        <g-button loading>2</g-button>
-        <g-button loading icon-right>3</g-button>
-    </g-button-group> -->
-        <!-- <g-input v-model="message"></g-input>
-        <p>{{message}}</p> -->
-        <g-row>
-            <g-col offset="1">
-                <span>1</span>
-            </g-col>
-            <g-col offset="1">
-                <span>1</span>
-            </g-col>
-        </g-row>
+        <g-layout style="border: 1px solid red">
+            <g-header>header</g-header>
+            <g-layout>
+                <g-sider>sider</g-sider>
+                <g-content>content</g-content>
+            </g-layout>
+            <g-footer>footer</g-footer>
+        </g-layout>
         <div id="test"></div>
     </div>
     <script src="./src/app.js"></script>
