@@ -34,7 +34,79 @@ describe('gRow', () => {
             expect(getComputedStyle(cols[0]).paddingLeft).to.eq('10px')
             expect(getComputedStyle(cols[1]).paddingRight).to.eq('10px')
             done()
+            vm.$el.remove()
+            vm.$destroy()
         },0)
+    })
+    it('接收align 属性',()=>{
+        const div = document.createElement('div');
+        document.body.appendChild(div)
+        const Constructor = Vue.extend(gRow);
+        const vm = new Constructor({
+            propsData: {
+                align: 'center'
+            }
+        }).$mount(div)
+        const element = vm.$el;
+        expect(getComputedStyle(element).justifyContent).to.eq('center')
+        vm.$el.remove()
+        vm.$destroy()
+    })
+    it('接收span 属性',()=>{
+        const div = document.createElement('div');
+        document.body.appendChild(div)
+        const Constructor = Vue.extend(gCol);
+        const vm = new Constructor({
+            propsData: {
+                span: 1
+            }
+        }).$mount(div)
+        expect(vm.$el.classList.contains('col-1')).to.eq(true)
+        vm.$el.remove()
+        vm.$destroy()
+    })
+    it('接收offset 属性',()=>{
+        const div = document.createElement('div');
+        document.body.appendChild(div)
+        const Constructor = Vue.extend(gCol);
+        const vm = new Constructor({
+            propsData: {
+                offset: 1
+            }
+        }).$mount(div)
+        expect(vm.$el.classList.contains('offset-1')).to.eq(true)
+        vm.$el.remove()
+        vm.$destroy()
+    })
+    it('接收xs-span属性',()=>{
+        const div = document.createElement('div');
+        document.body.appendChild(div)
+        const Constructor = Vue.extend(gCol);
+        const vm = new Constructor({
+            propsData: {
+                xs: {
+                    span:1
+                }
+            }
+        }).$mount(div)
+        expect(vm.$el.classList.contains('col-xs-1')).to.eq(true)
+        vm.$el.remove()
+        vm.$destroy()
+    })
+    it('接收xs-offset属性',()=>{
+        const div = document.createElement('div');
+        document.body.appendChild(div)
+        const Constructor = Vue.extend(gCol);
+        const vm = new Constructor({
+            propsData: {
+                xs: {
+                    offset:1
+                }
+            }
+        }).$mount(div)
+        expect(vm.$el.classList.contains('offset-xs-1')).to.eq(true)
+        vm.$el.remove()
+        vm.$destroy()
     })
 })
 
