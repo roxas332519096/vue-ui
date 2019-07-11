@@ -39,35 +39,33 @@ export default {
     colStyle() {
       return {
         paddingLeft: this.gutter / 2 + "px",
-        paddingRigt: this.gutter / 2 + "px"
+        paddingRight: this.gutter / 2 + "px"
       };
     },
     colClass() {
       let { span, offset, xs, sm, md, lg, xl } = this;
-      let xsClass = xs
-        ? [xs.span && `col-xs-${xs.span}`, xs.offset && `col-xs-${xs.offset}`]
-        : [];
-      let smClass = sm
-        ? [sm.span && `col-sm-${sm.span}`, sm.offset && `col-sm-${sm.offset}`]
-        : [];
-      let mdClass = md
-        ? [md.span && `col-md-${md.span}`, xs.offset && `col-md-${xs.offset}`]
-        : [];
-      let lgClass = lg
-        ? [lg.span && `col-sm-${lg.span}`, lg.offset && `col-lg-${lg.offset}`]
-        : [];
-      let xlClass = xl
-        ? [xl.span && `col-sm-${xl.span}`, xl.offset && `col-xl-${xs.offset}`]
-        : [];
+      let createClass = this.createClass;
       return [
-        span && `col-${span}`,
-        offset && `offset-${offset}`,
-        ...xsClass,
-        ...smClass,
-        ...mdClass,
-        ...lgClass,
-        ...xlClass
+        ...createClass({ span, offset }),
+        ...createClass(xs, "xs-"),
+        ...createClass(sm, "sm-"),
+        ...createClass(md, "md-"),
+        ...createClass(lg, "lg-"),
+        ...createClass(xl, "xl-")
       ];
+    }
+  },
+  methods: {
+    createClass(obj, str = "") {
+      if (!obj) return [];
+      let array = [];
+      if (obj.span) {
+        array.push(`col-${str}${obj.span}`);
+      }
+      if (obj.offset) {
+        array.push(`col-${str}${obj.offset}`);
+      }
+      return array;
     }
   },
   mounted() {}
@@ -104,7 +102,7 @@ export default {
     }
   }
   //sm
-  @media (min-width: 769px) and (max-width: 992px) {
+  @media (min-width: 769px) {
     $class-prefix: col-sm-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -119,7 +117,7 @@ export default {
     }
   }
   //md
-  @media (min-width: 993px) and (max-width: 1200px) {
+  @media (min-width: 992px) {
     $class-prefix: col-md-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -134,7 +132,7 @@ export default {
     }
   }
   //lg
-  @media (min-width: 1201px) and (max-width: 1920px) {
+  @media (min-width: 1200px) {
     $class-prefix: col-lg-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -149,7 +147,7 @@ export default {
     }
   }
   //xl
-  @media (min-width: 1921px) {
+  @media (min-width: 1920px) {
     $class-prefix: col-xl-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
