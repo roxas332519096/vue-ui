@@ -9,30 +9,37 @@ import header from './header.vue'
 import content from './content.vue'
 import sider from './sider.vue'
 import footer from './footer.vue'
+import gToast from './toast.vue'
+import plugin from './plugin.js'
 
 Vue.component('g-button', gButton)
 Vue.component('g-button-group', gButtonGroup)
-Vue.component('g-input',gInput)
-Vue.component('g-row',gRow)
-Vue.component('g-col',gCol)
-Vue.component('g-layout',layout)
-Vue.component('g-header',header)
-Vue.component('g-content',content)
-Vue.component('g-sider',sider)
-Vue.component('g-footer',footer)
+Vue.component('g-input', gInput)
+Vue.component('g-row', gRow)
+Vue.component('g-col', gCol)
+Vue.component('g-layout', layout)
+Vue.component('g-header', header)
+Vue.component('g-content', content)
+Vue.component('g-sider', sider)
+Vue.component('g-footer', footer)
+Vue.component('g-toast', gToast)
+Vue.use(plugin)
 
 new Vue({
     el: '#app',
     data() {
         return {
             isLoading: true,
-            message:''
+            message: ''
         }
     },
-    methods:{
-        inputChange(e){
-            console.log(e)
+    methods: {
+        showToast(){
+            this.$toast('Hello World')
         }
+    },
+    mounted(){
+        
     }
 })
 
