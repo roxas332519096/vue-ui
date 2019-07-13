@@ -16,12 +16,11 @@ export default {
   name: "gToast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    autoCloseDelay: {
-      type: Number,
-      default: 3
+      type: [Number, Boolean],
+      default: 3,
+      validator(value) {
+        return value === false || typeof value === "number"
+      }
     },
     closeButton: {
       type: Object,
@@ -61,7 +60,7 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     updateStyles() {
@@ -91,7 +90,8 @@ $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
 $toast-color: white;
-@keyframes fade-in-top {
+$animation-duration: 0.3s;
+@keyframes slide-down {
   0% {
     opacity: 0;
     transform: translateY(-50%);
@@ -101,15 +101,7 @@ $toast-color: white;
     transform: translateY(0);
   }
 }
-@keyframes fade-in-middle {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade-in-bottom {
+@keyframes slide-up {
   0% {
     opacity: 0;
     transform: translateY(50%);
@@ -117,6 +109,14 @@ $toast-color: white;
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .wrapper {
@@ -127,13 +127,17 @@ $toast-color: white;
   &.position-top {
     top: 0;
     .toast {
-      animation: fade-in-top 1s;
+      animation: slide-down $animation-duration;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
   }
   &.position-bottom {
     bottom: 0;
     .toast {
-      animation: fade-in-bottom 1s;
+      animation: slide-up $animation-duration;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
   }
   &.position-middle {
@@ -141,7 +145,7 @@ $toast-color: white;
     left: 50%;
     transform: translate(-50%, -50%);
     .toast {
-      animation: fade-in-middle 1s;
+      animation: fade-in $animation-duration;
     }
   }
 }
@@ -154,6 +158,7 @@ $toast-color: white;
   line-height: 1.8;
   background: $toast-bg;
   color: $toast-color;
+  border-radius: 4px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   .message {
     padding: 8px 0px;
