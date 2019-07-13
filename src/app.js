@@ -35,7 +35,17 @@ new Vue({
     },
     methods: {
         showToast(){
-            this.$toast('Hello World')
+            this.$toast('<p>传入文字传入文字传入文字传入文字传入文字传入文字</p>',{
+                closeButton:{
+                    text:'关闭',
+                    callback(toast){
+                    }
+                },
+                enableHtml:true,
+                autoClose:false,
+                autoCloseDelay:3,
+                position:'middle'
+            })
         }
     },
     mounted(){
