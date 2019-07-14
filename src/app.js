@@ -46,7 +46,9 @@ new Vue({
         }
     },
     methods: {
-
+        yyy(){
+            
+        }
     },
     mounted() {
 

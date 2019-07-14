@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Vue from "vue";
 export default {
   name: "gTabs",
   props: {
@@ -20,7 +21,24 @@ export default {
       }
     }
   },
-  created() {}
+  provide() {
+    return {
+      eventBus: this.eventBus
+    };
+  },
+  data() {
+    return {
+      eventBus: new Vue()
+    };
+  },
+  created() {
+    //   this.eventBus.$on("updated:selected", (name)=>{
+         
+    //   });
+  },
+  mounted(){
+      this.eventBus.$emit('updated:selected',this.selected)
+  }
 };
 </script>
 
