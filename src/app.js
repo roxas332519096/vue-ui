@@ -17,6 +17,7 @@ import gTabsHead from './tabsHead.vue'
 import gTabsBody from './tabsBody.vue'
 import gTabsItem from './tabsItem.vue'
 import gTabsPane from './tabsPane.vue'
+import gPopover from './popover.vue'
 
 Vue.component('g-button', gButton)
 Vue.component('g-icon', gIcon)
@@ -36,6 +37,7 @@ Vue.component('g-tabs-head', gTabsHead)
 Vue.component('g-tabs-body', gTabsBody)
 Vue.component('g-tabs-item', gTabsItem)
 Vue.component('g-tabs-pane', gTabsPane)
+Vue.component('g-popover', gPopover)
 
 
 new Vue({
@@ -46,9 +48,6 @@ new Vue({
         }
     },
     methods: {
-        yyy(){
-
-        }
     },
     mounted() {
 
