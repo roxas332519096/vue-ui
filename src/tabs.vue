@@ -31,13 +31,20 @@ export default {
       eventBus: new Vue()
     };
   },
-  created() {
-    //   this.eventBus.$on("updated:selected", (name)=>{
-         
-    //   });
-  },
-  mounted(){
-      this.eventBus.$emit('updated:selected',this.selected)
+  created() {},
+  mounted() {
+    this.$children.forEach(vm => {
+      if (vm.$options.name === "gTabsHead") {
+        vm.$children.forEach(item => {
+          if (
+            item.$options.name === "gTabsItem" &&
+            item.name === this.selected
+          ) {
+            this.eventBus.$emit("updated:selected", this.selected,item);
+          }
+        });
+      }
+    });
   }
 };
 </script>

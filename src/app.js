@@ -42,12 +42,12 @@ new Vue({
     el: '#app',
     data() {
         return {
-            selectedTab: 'title1'
+            selectedTab: 'title3'
         }
     },
     methods: {
         yyy(){
-            
+
         }
     },
     mounted() {
