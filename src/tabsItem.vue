@@ -6,7 +6,17 @@
 
 <script>
 export default {
-  name: "gTabsItem"
+  name: "gTabsItem",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    name: {
+      type: String,
+      required: true
+    }
+  }
 };
 </script>
 

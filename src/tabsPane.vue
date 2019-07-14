@@ -1,17 +1,16 @@
 <template>
   <div class="tabsPane">
-      <slot></slot>
+    <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-    name:'gTabsPane'
-}
+  name: "gTabsPane"
+};
 </script>
 
 <style lang="scss" scoped>
-.tabsPane{
-
+.tabsPane {
 }
 </style>

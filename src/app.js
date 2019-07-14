@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import gButton from './button.vue'
+import gIcon from './icon.vue'
 import gButtonGroup from './button-group.vue'
 import gInput from './input.vue'
 import gRow from './row.vue'
@@ -18,6 +19,7 @@ import gTabsItem from './tabsItem.vue'
 import gTabsPane from './tabsPane.vue'
 
 Vue.component('g-button', gButton)
+Vue.component('g-icon', gIcon)
 Vue.component('g-button-group', gButtonGroup)
 Vue.component('g-input', gInput)
 Vue.component('g-row', gRow)
@@ -40,27 +42,14 @@ new Vue({
     el: '#app',
     data() {
         return {
-            isLoading: true,
-            message: ''
+            selectedTab: 'title1'
         }
     },
     methods: {
-        showToast(){
-            this.$toast('<p>传入文字传入文字传入文字传入文字传入文字传入文字</p>',{
-                closeButton:{
-                    text:'关闭',
-                    callback(toast){
-                    }
-                },
-                enableHtml:true,
-                autoClose:false,
-                autoCloseDelay:3,
-                position:'bottom'
-            })
-        }
+
     },
-    mounted(){
-        
+    mounted() {
+
     }
 })
 

@@ -6,7 +6,21 @@
 
 <script>
 export default {
-  name: "gTabs"
+  name: "gTabs",
+  props: {
+    selected: {
+      type: String,
+      required: true
+    },
+    direction: {
+      type: String,
+      default: "horizontal",
+      validator(value) {
+        return ["horizontal", "vertical"].indexOf(value) !== -1;
+      }
+    }
+  },
+  created() {}
 };
 </script>
 
