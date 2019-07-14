@@ -15,7 +15,18 @@
 
 <body>
     <div id="app">
-        <button @click="showToast">123</button>
+        <g-tabs>
+            <g-tabs-head>
+                <g-tabs-item name="title1">标题1</g-tabs-item>
+                <g-tabs-item name="title2">标题2</g-tabs-item>
+                <g-tabs-item name="title3">标题3</g-tabs-item>
+            </g-tabs-head>
+            <g-tabs-body>
+                <g-tabs-item name="title1">内容1</g-tabs-item>
+                <g-tabs-item name="title2">内容2</g-tabs-item>
+                <g-tabs-item name="title3">内容3</g-tabs-item>
+            </g-tabs-body>
+        </g-tabs>
         <div id="test"></div>
     </div>
     <script src="./src/app.js"></script>

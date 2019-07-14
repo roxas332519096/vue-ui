@@ -11,6 +11,11 @@ import sider from './sider.vue'
 import footer from './footer.vue'
 import gToast from './toast.vue'
 import plugin from './plugin.js'
+import gTabs from './tabs.vue'
+import gTabsHead from './tabsHead.vue'
+import gTabsBody from './tabsBody.vue'
+import gTabsItem from './tabsItem.vue'
+import gTabsPane from './tabsPane.vue'
 
 Vue.component('g-button', gButton)
 Vue.component('g-button-group', gButtonGroup)
@@ -24,6 +29,12 @@ Vue.component('g-sider', sider)
 Vue.component('g-footer', footer)
 Vue.component('g-toast', gToast)
 Vue.use(plugin)
+Vue.component('g-tabs', gTabs)
+Vue.component('g-tabs-head', gTabsHead)
+Vue.component('g-tabs-body', gTabsBody)
+Vue.component('g-tabs-item', gTabsItem)
+Vue.component('g-tabs-pane', gTabsPane)
+
 
 new Vue({
     el: '#app',
