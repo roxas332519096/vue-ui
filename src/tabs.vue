@@ -33,6 +33,10 @@ export default {
   },
   created() {},
   mounted() {
+      if(this.$children.length === 0){
+          console && console.warn &&
+          console.warn('tabs children must be tabsHead and tabsBody')
+      }
     this.$children.forEach(vm => {
       if (vm.$options.name === "gTabsHead") {
         vm.$children.forEach(item => {
