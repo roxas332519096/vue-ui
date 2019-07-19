@@ -1,9 +1,11 @@
 <template>
-  <div class="popover" @click.stop="xxx">
-    <div class="content-wrapper" v-if="visiable"  @click.stop>
+  <div class="popover" @click="onClick">
+    <div ref="contentWrapper" class="content-wrapper" v-if="visiable">
       <slot name="content"></slot>
     </div>
-    <slot></slot>
+    <span ref="triggerWrapper">
+      <slot></slot>
+    </span>
   </div>
 </template>
 
@@ -16,16 +18,35 @@ export default {
     };
   },
   methods: {
-    xxx() {
-      this.visiable = !this.visiable;
-      if (this.visiable === true) {
-        setTimeout(() => {
-          let eventHandler = () => {
-            this.visiable = false;
-            document.removeEventListener("click", eventHandler);
-          };
-          document.addEventListener("click", eventHandler);
-        });
+    positionContent() {
+      document.body.appendChild(this.$refs.contentWrapper);
+      let { top, left } = this.$refs.triggerWrapper.getBoundingClientRect();
+      this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
+      this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
+    },
+    onClickDocument(e) {
+      if (!this.$refs.contentWrapper.contains(e.target)) {
+        this.close();
+      }
+    },
+    open() {
+      this.visiable = true;
+      setTimeout(() => {
+        this.positionContent();
+        document.addEventListener("click", this.onClickDocument);
+      });
+    },
+    close() {
+      this.visiable = false;
+      document.removeEventListener("click", this.onClickDocument);
+    },
+    onClick(event) {
+      if (this.$refs.triggerWrapper.contains(event.target)) {
+        if (this.visiable === true) {
+          this.close();
+        } else {
+          this.open();
+        }
       }
     }
   }
@@ -34,15 +55,17 @@ export default {
 
 <style lang="scss" scoped>
 .popover {
-  position: absolute;
+  position: relative;
   display: inline-block;
   vertical-align: top;
-  .content-wrapper {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    border: 1px solid red;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  }
+}
+</style>
+
+<style lang="scss">
+.content-wrapper {
+  position: absolute;
+  border: 1px solid red;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  transform: translateY(-100%);
 }
 </style>
