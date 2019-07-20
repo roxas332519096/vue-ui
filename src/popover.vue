@@ -1,12 +1,12 @@
 <template>
-  <div class="popover" @click="onClick">
+  <div class="popover" ref="popover">
     <div
       ref="contentWrapper"
       class="content-wrapper"
       v-if="visiable"
       :class="{[`position-${position}`]:true}"
     >
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display:inline-block">
       <slot></slot>
@@ -25,38 +25,71 @@ export default {
       validator(value) {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
       }
-    }
+    },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0;
+      }
+    },
   },
   data() {
     return {
       visiable: false
     };
   },
+  mounted() {
+    if (this.trigger === "click") {
+      this.$refs.popover.addEventListener("click", this.onClick);
+    } else {
+      this.$refs.popover.addEventListener("mouseenter", this.open);
+      this.$refs.popover.addEventListener("mouseleave", this.close);
+    }
+  },
+  destroyed() {
+    if (this.trigger === "click") {
+      this.$refs.popover.removeEventListener("click", this.onClick);
+    } else {
+      this.$refs.popover.removeEventListener("mouseenter", this.open);
+      this.$refs.popover.removeEventListener("mouseleave", this.close);
+    }
+  },
   methods: {
     positionContent() {
       //使内容区在body的最后
       const { triggerWrapper, contentWrapper } = this.$refs;
       document.body.appendChild(contentWrapper);
-      let { top, left, width, height } = triggerWrapper.getBoundingClientRect();
-      let {
+      const {
+        top,
+        left,
+        width,
+        height
+      } = triggerWrapper.getBoundingClientRect();
+      const {
         height: height2,
         width: width2
       } = contentWrapper.getBoundingClientRect();
-      if (this.position === "top") {
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top = top - height2 + window.scrollY + "px";
-      } else if (this.position === "bottom") {
-        contentWrapper.style.left = left + window.scrollX + "px";
-        contentWrapper.style.top = top + window.scrollY + height + "px";
-      } else if (this.position === "left") {
-        contentWrapper.style.top =
-          top + (height - height2) / 2 + window.scrollY + "px";
-        contentWrapper.style.left = left - width2 - window.scrollX + "px";
-      } else if (this.position === "right") {
-        contentWrapper.style.top =
-          top + (height - height2) / 2 + window.scrollY + "px";
-        contentWrapper.style.left = left + width + window.scrollX + "px";
-      }
+      const positions = {
+        top: {
+          top: top - height2 + window.scrollY,
+          left: left + window.scrollX
+        },
+        bottom: {
+          top: top + window.scrollY + height,
+          left: left + window.scrollX
+        },
+        left: {
+          top: top + (height - height2) / 2 + window.scrollY,
+          left: left - width2 - window.scrollX
+        },
+        right: {
+          top: top + (height - height2) / 2 + window.scrollY,
+          left: left + width + window.scrollX
+        }
+      };
+      contentWrapper.style.left = positions[this.position].left + "px";
+      contentWrapper.style.top = positions[this.position].top + "px";
     },
     onClickDocument(e) {
       if (!this.$refs.contentWrapper.contains(e.target)) {
@@ -121,6 +154,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       left: 10;
+      border-bottom: none;
     }
     &::before {
       top: 100%;
@@ -136,6 +170,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       left: 10;
+      border-top: none;
     }
     &::before {
       bottom: 100%;
@@ -152,6 +187,7 @@ $border-radius: 4px;
     &::after {
       top: 50%;
       transform: translateY(-50%);
+      border-right: none;
     }
     &::before {
       left: 100%;
@@ -168,6 +204,7 @@ $border-radius: 4px;
     &::after {
       top: 50%;
       transform: translateY(-50%);
+      border-left: none;
     }
     &::before {
       right: 100%;
@@ -179,7 +216,6 @@ $border-radius: 4px;
     }
   }
 }
-
 </style>
 
 
