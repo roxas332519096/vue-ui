@@ -18,6 +18,8 @@ import gTabsBody from './tabsBody.vue'
 import gTabsItem from './tabsItem.vue'
 import gTabsPane from './tabsPane.vue'
 import gPopover from './popover.vue'
+import gCollapse from './collapse.vue'
+import gCollapseItem from './collapse-item.vue'
 
 Vue.component('g-button', gButton)
 Vue.component('g-icon', gIcon)
@@ -38,13 +40,15 @@ Vue.component('g-tabs-body', gTabsBody)
 Vue.component('g-tabs-item', gTabsItem)
 Vue.component('g-tabs-pane', gTabsPane)
 Vue.component('g-popover', gPopover)
+Vue.component('g-collapse', gCollapse)
+Vue.component('g-collapse-item', gCollapseItem)
 
 
 new Vue({
     el: '#app',
     data() {
         return {
-            selectedTab: 'title3'
+            selectedTab: ['1','2'],
         }
     },
     methods: {

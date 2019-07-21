@@ -35,7 +35,7 @@
                 <g-tabs-pane name="title3">内容3</g-tabs-pane>
             </g-tabs-body>
         </g-tabs> -->
-        <g-popover position="top">
+        <!-- <g-popover position="top">
             <template slot="content">
                 <div>
                     content
@@ -66,7 +66,14 @@
                 </div>
             </template>
             <g-button>click</g-button>
-        </g-popover>
+        </g-popover> -->
+        <g-collapse :selected.sync="selectedTab" single>
+            <g-collapse-item title="title1" name="1">1</g-collapse-item>
+            <g-collapse-item title="title2" name="2">2</g-collapse-item>
+            <g-collapse-item title="title3" name="3">3</g-collapse-item>
+            <g-collapse-item title="title4" name="4">4</g-collapse-item>
+        </g-collapse>
+        <div>{{selectedTab}}</div>
         <div id="test"></div>
     </div>
     <script src="./src/app.js"></script>
