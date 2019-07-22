@@ -1,4 +1,5 @@
 module.exports = {
+    base:'/vue-ui/',
     title: 'Roxas UI',
     description: '一个基于Vue简单好用的UI库',
     themeConfig: {

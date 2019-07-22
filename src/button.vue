@@ -1,5 +1,5 @@
 <template>
-  <button class="g-button" :class="{right:iconRight}" @click="_click">
+  <button class="g-button" :class="{right:iconRight,disabled:disabled}" @click="_click">
     <g-icon :name="icon" v-if="icon && !loading"></g-icon>
     <g-icon name="loading" class="loading" v-if="loading"></g-icon>
     <div class="content">
@@ -26,10 +26,15 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     _click() {
+      if (this.disabled) return;
       this.$emit("click");
     }
   }
@@ -59,7 +64,7 @@ $button-active-bg: #eee;
   align-items: center;
   vertical-align: middle;
   padding: 0 1em;
-  height:$button-height;
+  height: $button-height;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   font-size: $font-size;
@@ -96,6 +101,17 @@ $button-active-bg: #eee;
       order: 2;
       margin-right: 0;
       margin-left: 0.3em;
+    }
+  }
+
+  &.disabled {
+    cursor: no-drop;
+    color: #aaa;
+    &:hover {
+      border-color: $border-color;
+    }
+    &:active {
+      background-color: $button-bg;
     }
   }
 
