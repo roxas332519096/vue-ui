@@ -1,14 +1,14 @@
 <template>
   <div class="wrapper" :class="{error}">
     <input
-      type="text"
+      :type="type"
       :value="value"
       :disabled="disabled"
       :readonly="readonly"
       @change="$emit('change',$event.target.value)"
       @input="$emit('input',$event.target.value)"
-      @focus="$emit('focus',$event.target.value)"
-      @blur="$emit('blur',$event.target.value)"
+      @focus="$emit('focus',$event)"
+      @blur="$emit('blur',$event)"
     />
     <template v-if="error">
       <g-icon name="info" class="errorIcon"></g-icon>
@@ -37,6 +37,13 @@ export default {
     },
     error: {
       type: String
+    },
+    type:{
+      type:String,
+      default:'text',
+      validator(value){
+        return ['text','password'].indexOf(value) > 0;
+      }
     }
   },
   components: { gIcon }

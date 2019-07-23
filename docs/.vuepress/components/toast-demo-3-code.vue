@@ -24,22 +24,23 @@ export default {
     return {
       selected: [],
       code: `
-        <div class="demo">
-          <g-row gutter="20">
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple-light"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-          </g-row>
-      </div>   
+         <g-button @click="showToast">打开消息提示</g-button>
+
+         export default {
+          methods: {
+            showToast() {
+               this.$toast("可设置关闭按钮", {
+                  autoClose: false,
+                  closeButton: {
+                    text: "可设置的关闭按钮",
+                    callback(toast) {
+                      alert("关闭回调的函数");
+                    }
+                  }
+                });
+            }
+          }
+        };
       `
     };
   }

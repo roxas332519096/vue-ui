@@ -16,8 +16,12 @@ export default {
   mounted() {
     this.eventBus.$on("updated:selected", (name, item) => {
       let { width, height, top, left } = item.$el.getBoundingClientRect();
+      let parentLeft = this.$el.getBoundingClientRect().left;
+      console.log("this", left);
+      console.log("parent", parentLeft);
       this.$refs.line.style.width = `${width}px`;
-      this.$refs.line.style.left = `${left}px`;
+      let offsetLeft = left - parentLeft;
+      this.$refs.line.style.left = `${offsetLeft}px`;
     });
   }
 };
@@ -25,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 $tab-height: 40px;
-$border-color:#ddd;
+$border-color: #ddd;
 $blue: blue;
 .gTabsHead {
   position: relative;

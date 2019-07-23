@@ -11,6 +11,9 @@
         <g-col span="6">
           <div class="grid-content bg-purple"></div>
         </g-col>
+        <g-col span="6">
+          <div class="grid-content bg-purple"></div>
+        </g-col>
       </g-row>
     </div>
   </div>
@@ -31,6 +34,9 @@ export default {
 </script>
 
 <style>
+*{
+  box-sizing: border-box;
+}
 .demo {
   margin-top: 10px;
 }

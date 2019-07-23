@@ -24,22 +24,7 @@ export default {
     return {
       selected: [],
       code: `
-        <div class="demo">
-          <g-row gutter="20">
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple-light"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-          </g-row>
-      </div>   
+        <g-input type="password" v-model="input"></g-input>
       `
     };
   }

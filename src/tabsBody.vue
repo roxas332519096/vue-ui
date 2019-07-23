@@ -1,5 +1,5 @@
 <template>
-  <div class="tabsBody">
+  <div class="gTabsBody">
     <slot></slot>
   </div>
 </template>
@@ -12,6 +12,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tabsBody {
+.gTabsBody {
 }
 </style>

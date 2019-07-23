@@ -24,22 +24,20 @@ export default {
     return {
       selected: [],
       code: `
-        <div class="demo">
-          <g-row gutter="20">
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple-light"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-            <g-col span="6">
-              <div class="grid-content bg-purple"></div>
-            </g-col>
-          </g-row>
-      </div>   
+        <g-collapse :selected.sync="selectedTab" single>
+            <g-collapse-item title="title1" name="1">1</g-collapse-item>
+            <g-collapse-item title="title2" name="2">2</g-collapse-item>
+            <g-collapse-item title="title3" name="3">3</g-collapse-item>
+            <g-collapse-item title="title4" name="4">4</g-collapse-item>
+        </g-collapse>
+
+        export default {
+            data() {
+                return {
+                selectedTab: []
+                };
+            }
+        };
       `
     };
   }
