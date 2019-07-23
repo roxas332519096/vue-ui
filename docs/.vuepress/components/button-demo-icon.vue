@@ -1,6 +1,7 @@
 <template>
   <div>
-    <g-button>默认按钮</g-button>
+    <g-button icon="setting">默认按钮</g-button>
+    <g-button icon="setting" iconRight>默认按钮</g-button>
     <pre>
         <code>
             {{code}}
@@ -18,7 +19,8 @@ export default {
   data() {
     return {
       code: `
-        <g-button>默认按钮</g-button>
+        <g-button icon="setting">默认按钮</g-button>
+        <g-button icon="setting" iconRight>默认按钮</g-button>
      `
     };
   }
