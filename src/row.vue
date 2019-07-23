@@ -11,11 +11,11 @@ export default {
     gutter: {
       type: [String, Number]
     },
-    align:{
-      type:String,
-      validator(value){
-        return ['left','right','center'].indexOf(value) >= 0
-      } 
+    align: {
+      type: String,
+      validator(value) {
+        return ["left", "right", "center"].indexOf(value) >= 0;
+      }
     }
   },
   data() {
@@ -28,8 +28,8 @@ export default {
         marginRight: -this.gutter / 2 + "px"
       };
     },
-    rowClass(){
-      return this.align && `align-${this.align}`
+    rowClass() {
+      return this.align && `align-${this.align}`;
     }
   },
   mounted() {
@@ -44,14 +44,14 @@ export default {
 .row {
   display: flex;
   flex-wrap: wrap;
-  &.align-center{
-    justify-content: center
+  &.align-center {
+    justify-content: center;
   }
-  &.align-left{
-    justify-content:left
+  &.align-left {
+    justify-content: left;
   }
-  &.align-right{
-    justify-content: right
+  &.align-right {
+    justify-content: right;
   }
 }
 </style>

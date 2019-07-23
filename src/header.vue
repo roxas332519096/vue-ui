@@ -1,15 +1,14 @@
 <template>
-    <div>
-        <slot></slot>
-    </div>
+  <div class="g-header">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
 export default {
-    name:'gHeader'
-}
+  name: "gHeader"
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

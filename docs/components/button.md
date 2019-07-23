@@ -7,9 +7,7 @@ title:Button 按钮
 ## 引入
 
 ```
-improt {gButton} from 'roxas-ui'
-improt {gButtonGroup} from 'roxas-ui'
-improt {gIcon} from 'roxas-ui'
+improt {gButton,gButtonGroup,gIcon} from 'roxas-ui'
 ```
 
 常用的操作按钮。
@@ -53,6 +51,12 @@ improt {gIcon} from 'roxas-ui'
 <ClientOnly>
   <button-group-demo/>
 </ClientOnly>
+
+::: warning
+
+g-button-group 的子元素必须是 g-button,否则不生效。
+
+:::
 
 ## Attributes
 

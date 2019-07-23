@@ -1,5 +1,5 @@
 module.exports = {
-    base:'/vue-ui/',
+    base: '/vue-ui/',
     title: 'Roxas UI',
     description: '一个基于Vue简单好用的UI库',
     themeConfig: {
@@ -11,11 +11,20 @@ module.exports = {
         sidebar: [
             {
                 title: '入门',
-                children: ['/install/','/get-started/']
+                children: ['/install/', '/get-started/']
             },
             {
                 title: '组件',
-                children: ['/components/button',]
+                children: [
+                    '/components/layout',
+                    '/components/grid',
+                    '/components/button',
+                    '/components/input',
+                    '/components/tab',
+                    '/components/collapse',
+                    '/components/toast',
+                    '/components/popover',
+                ]
             }
         ]
     }

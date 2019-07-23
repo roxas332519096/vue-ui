@@ -9,7 +9,7 @@
 1. 安装
 
 ```
-npm i --save roxas-ui-test
+npm i --save roxas-ui
 ```
 
 2. 引入
@@ -29,7 +29,7 @@ export default {
 
 3. 添加 css 样式
 
-   使用本框架前,请 css 设计 border-box
+   使用本框架前,请 css 设置 border-box
 
    ```
    *,

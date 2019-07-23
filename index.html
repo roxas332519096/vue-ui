@@ -1,24 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hans">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>UI</title>
-    <link rel="stylesheet" href="./src/css/main.scss">
+    <link rel="stylesheet" href="./src/css/main.scss" />
     <style>
-        #app {
-            padding: 100px;
-        }
+      #app {
+        padding: 100px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <!-- <g-tabs selected="title1" @update:selected="selectedTab = $event"> -->
-        <!-- <g-tabs :selected.sync="selectedTab" @updated:selected="yyy">
+      <!-- <g-tabs selected="title1" @update:selected="selectedTab = $event"> -->
+      <!-- <g-tabs :selected.sync="selectedTab" @updated:selected="yyy">
             <g-tabs-head>
                 <template slot="actions">
                     <button>Actions</button>
@@ -35,7 +36,7 @@
                 <g-tabs-pane name="title3">内容3</g-tabs-pane>
             </g-tabs-body>
         </g-tabs> -->
-        <!-- <g-popover position="top">
+      <!-- <g-popover position="top">
             <template slot="content">
                 <div>
                     content
@@ -67,16 +68,15 @@
             </template>
             <g-button>click</g-button>
         </g-popover> -->
-        <g-collapse :selected.sync="selectedTab" single>
-            <g-collapse-item title="title1" name="1">1</g-collapse-item>
-            <g-collapse-item title="title2" name="2">2</g-collapse-item>
-            <g-collapse-item title="title3" name="3">3</g-collapse-item>
-            <g-collapse-item title="title4" name="4">4</g-collapse-item>
-        </g-collapse>
-        <div>{{selectedTab}}</div>
-        <div id="test"></div>
+      <g-collapse :selected.sync="selectedTab" single>
+        <g-collapse-item title="title1" name="1">1</g-collapse-item>
+        <g-collapse-item title="title2" name="2">2</g-collapse-item>
+        <g-collapse-item title="title3" name="3">3</g-collapse-item>
+        <g-collapse-item title="title4" name="4">4</g-collapse-item>
+      </g-collapse>
+      <div>{{ selectedTab }}</div>
+      <div id="test"></div>
     </div>
     <script src="./src/app.js"></script>
-</body>
-
+  </body>
 </html>

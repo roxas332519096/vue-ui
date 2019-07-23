@@ -28,6 +28,22 @@ export default {
     xs: {
       type: Object,
       validator
+    },
+    sm: {
+      type: Object,
+      validator
+    },
+    md: {
+      type: Object,
+      validator
+    },
+    lg: {
+      type: Object,
+      validator
+    },
+    xl: {
+      type: Object,
+      validator
     }
   },
   data() {
@@ -63,7 +79,6 @@ export default {
         array.push(`col-${str}${obj.span}`);
       }
       if (obj.offset) {
-        console.log(obj.offset)
         array.push(`offset-${str}${obj.offset}`);
       }
       return array;

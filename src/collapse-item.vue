@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      open: false,
+      open: false
     };
   },
   inject: ["eventBus"],

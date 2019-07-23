@@ -17,7 +17,11 @@ export default {
 }
 ```
 
+::: warning
+
 使用本框架前,请将 css 盒模型设置成 border-box
+
+:::
 
 ```
 *,
@@ -36,11 +40,11 @@ import {
     gInput,
     gRow,
     gCol,
-    layout,
-    header,
-    content,
-    sider,
-    footer,
+    gLayout,
+    gHeader,
+    gContent,
+    gSider,
+    gFooter,
     gToast,
     plugin,
     gTabs,

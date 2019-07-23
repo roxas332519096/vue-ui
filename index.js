@@ -4,11 +4,11 @@ import gButtonGroup from './src/button-group'
 import gInput from './src/input.vue'
 import gRow from './src/row.vue'
 import gCol from './src/col.vue'
-import layout from './src/layout.vue'
-import header from './src/header.vue'
-import content from './src/content.vue'
-import sider from './src/sider.vue'
-import footer from './src/footer.vue'
+import gLayout from './src/layout.vue'
+import gHeader from './src/header.vue'
+import gContent from './src/content.vue'
+import gSider from './src/sider.vue'
+import gFooter from './src/footer.vue'
 import gToast from './src/toast.vue'
 import plugin from './src/plugin.js'
 import gTabs from './src/tabs.vue'
@@ -27,11 +27,11 @@ export {
     gInput,
     gRow,
     gCol,
-    layout,
-    header,
-    content,
-    sider,
-    footer,
+    gLayout,
+    gHeader,
+    gContent,
+    gSider,
+    gFooter,
     gToast,
     plugin,
     gTabs,
