@@ -11,7 +11,7 @@ describe('Input', () => {
     describe('props', () => {
         const Constructor = Vue.extend(gInput)
         let vm
-        afterEach(()=>{
+        afterEach(() => {
             vm.$destroy()
         })
         it('接收 value', () => {
@@ -53,23 +53,23 @@ describe('Input', () => {
             expect(errorMessage.innerText).to.equal('error')
         })
     })
-    describe('events',()=>{
+    describe('events', () => {
         const Constructor = Vue.extend(gInput)
         let vm
-        afterEach(()=>{
+        afterEach(() => {
             vm.$destroy()
         })
-        it('支持change/input/focus/blur事件,并且第一个参数是event',()=>{
-            ['change','input','focus','blur'].forEach((eventName)=>{
+        it('支持change/input/focus/blur事件,并且第一个参数是event', () => {
+            ['change', 'input', 'focus', 'blur'].forEach((eventName) => {
                 vm = new Constructor({}).$mount()
                 const callback = sinon.fake();
                 vm.$on(eventName, callback)
                 const event = new Event(eventName)
-                Object.defineProperty(event,'target',{
-                    value:{
-                        value:'hi'
+                Object.defineProperty(event, 'target', {
+                    value: {
+                        value: 'hi'
                     },
-                    enumerable:true
+                    enumerable: true
                 })
                 const inputElement = vm.$el.querySelector('input')
                 inputElement.dispatchEvent(event)

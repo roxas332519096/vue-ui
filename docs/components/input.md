@@ -5,6 +5,7 @@ title:Input 输入框
 # Input 输入框
 
 ## 引入
+
 ```
 improt {gInput} from 'roxas-ui'
 ```
@@ -61,12 +62,10 @@ improt {gInput} from 'roxas-ui'
   <input-demo-5-code/>
 </ClientOnly>
 
-
-
 ## Attributes
 
 | 参数     | 说明            | 类型          | 可选值        | 默认值 |
-|----------|-----------------|---------------|---------------|--------|
+| -------- | --------------- | ------------- | ------------- | ------ |
 | v-model  | 绑定值          | string/number | —             | —      |
 | disabled | 是否禁用状态    | Boolean       | —             | false  |
 | readonly | 是否只读状态    | Boolean       | —             | false  |
@@ -75,9 +74,9 @@ improt {gInput} from 'roxas-ui'
 
 ## Events
 
-| 事件名称 | 说明                  | 回调参数               |
-|----------|-----------------------|------------------------|
-| blur     | 组件失去焦点时触发    | (event: Event)         |
-| focus    | 组件获得焦点时触发    | (event: Event)         |
-| change   | 在 Input 值改变时触发 | (value: string|number) |
-
+| 事件名称 | 说明                      | 回调参数       |
+| -------- | ------------------------- | -------------- |
+| blur     | 组件失去焦点时触发        | (value: string | number) |
+| input    | 组件触发 input 事件时触发 | (value: string | number) |
+| focus    | 组件获得焦点时触发        | (value: string | number) |
+| change   | 在 Input 值改变时触发     | (value: string | number) |

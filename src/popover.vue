@@ -32,7 +32,7 @@ export default {
       validator(value) {
         return ["click", "hover"].indexOf(value) >= 0;
       }
-    },
+    }
   },
   data() {
     return {
