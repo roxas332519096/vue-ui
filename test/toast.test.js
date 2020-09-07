@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import gToast from '../src/toast.vue'
+import gToast from '../src/component/toast/toast.vue'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false

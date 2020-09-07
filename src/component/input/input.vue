@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import gIcon from "./icon";
+import gIcon from "../../component/icon/icon.vue";
 export default {
   name: "gInput",
   props: {

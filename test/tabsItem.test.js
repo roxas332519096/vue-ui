@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import gTabs from '../src/tabs.vue'
-import gTabsHead from '../src/tabsHead.vue'
-import gTabsBody from '../src/tabsBody.vue'
-import gTabsItem from '../src/tabsItem.vue'
-import gTabsPane from '../src/tabsPane.vue'
+import gTabs from '../src/component/tabs/tabs.vue'
+import gTabsHead from '../src/component/tabs/tabsHead.vue'
+import gTabsBody from '../src/component/tabs/tabsBody.vue'
+import gTabsItem from '../src/component/tabs/tabsItem.vue'
+import gTabsPane from '../src/component/tabs/tabsPane.vue'
 Vue.component('g-tabs', gTabs)
 Vue.component('g-tabs-head', gTabsHead)
 Vue.component('g-tabs-body', gTabsBody)

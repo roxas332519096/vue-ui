@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import gIcon from "./icon.vue";
+import gIcon from "../../component/icon/icon.vue";
 export default {
   name: "gButton",
   components: {

@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import gRow from '../src/row.vue'
-import gCol from '../src/col.vue'
+import gRow from '../src/component/layout/row.vue'
+import gCol from '../src/component/layout/col.vue'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false

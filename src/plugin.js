@@ -1,4 +1,4 @@
-import Toast from './toast.vue'
+import Toast from './component/toast/toast.vue'
 
 let currentToats
 

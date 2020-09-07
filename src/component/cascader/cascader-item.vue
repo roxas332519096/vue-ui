@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "var";
 .cascaderItem {
   margin-left: 10px;
 }
